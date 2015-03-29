@@ -2,10 +2,16 @@
 
 # Grab the container IP
 ADDR=$(/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')
+
 echo "IP Address is: $ADDR"
 
 # Check if a seed was provided
-SEED=${SEED:=$ADDR}
+if [[ -z $SEED ]]; then
+    SEED=$ADDR
+else
+    SEED=`echo $(dig +short $SEED) | tr ' ' ','`
+fi
+
 echo "Seed is: $SEED"
 
 if [ ! -f /root/.cassconfig ]; then
