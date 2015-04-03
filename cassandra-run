@@ -6,7 +6,7 @@ ADDR=$(/sbin/ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')
 echo "IP Address is: $ADDR"
 
 # ensure mesos-dns will add new seed's when first deploy
-sleep 30
+sleep 45
 
 # Check if a seed was provided
 if [[ -z $SEED ]]; then

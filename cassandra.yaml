@@ -1,4 +1,4 @@
-cluster_name: 'Cluster'
+cluster_name: 'ctrlpkw'
 num_tokens: 256
 hinted_handoff_enabled: true
 max_hint_window_in_ms: 10800000 # 3 hours
@@ -57,7 +57,7 @@ cas_contention_timeout_in_ms: 1000
 truncate_request_timeout_in_ms: 60000
 request_timeout_in_ms: 10000
 cross_node_timeout: false
-endpoint_snitch: SimpleSnitch
+endpoint_snitch: EC2Snitch
 dynamic_snitch_update_interval_in_ms: 100
 dynamic_snitch_reset_interval_in_ms: 600000
 dynamic_snitch_badness_threshold: 0.1

@@ -25,5 +25,7 @@ WORKDIR /opt/cassandra
 
 CMD ["/sbin/my_init"]
 
+VOLUME ["/opt/cassandra/data"]
+
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
